@@ -3,15 +3,15 @@ expenses = [
     
         ]
 
-gsList = ['0']
-eatList = ['0']
-ratsList = ['0']
-clothesList = ['0']
-taobaoListList = ['0']
-transportationList = ['4']
-hotelsList = ['0']
-skateboardingList = ['0']
-otherList = ['0']
+gsList = ['0', '58']
+eatList = ['0', '25']
+ratsList = ['0', '0']
+clothesList = ['0', '0']
+taobaoListList = ['0', '0']
+transportationList = ['4', '18']
+hotelsList = ['0', '0']
+skateboardingList = ['0', '0']
+otherList = ['0', '0']
 
 
 days = []
