@@ -60,8 +60,16 @@ plt.plot(x, gsList, "m-*")
 plt.xlabel('Days', fontsize=16)
 plt.title('March', fontsize=26)
 plt.ylabel('Expenses', fontsize=16)
-plt.show()
 
+
+plt.errorbar(x, transportationList, label='transportation')
+plt.errorbar(x, utilitiesList, label='utilites')
+plt.errorbar(x, taobaoList, label='taobao')
+plt.errorbar(x, ratsList, label='rats')
+plt.errorbar(x, eatList, label='fine dining')
+plt.errorbar(x, gsList, label='groceries and supplies')
+plt.legend()
+plt.show()
 #print(transportation)
     
 #allDays = [days for day in range(1,32)]
