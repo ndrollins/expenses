@@ -4,27 +4,27 @@ import numpy as np
 expenses = [
     
         ]
-gsList = [0, 58, 0, 0, 60 + 180 + 35]
+gsList = [0, 58, 0, 0, 60 + 180 + 35, 4]
 #gsList = ['0', '58', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-eatList = [0, 25, 21, 0, 0]
+eatList = [0, 25, 21, 0, 0, 70]
 #eatList = ['0', '25', '21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-ratsList = [0, 0, 114, 0, 0]
+ratsList = [0, 0, 114, 0, 0, 0]
 #ratsList = ['0', '0', '114', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-clothesList = [0, 0, 0, 0, 0]
+clothesList = [0, 0, 0, 0, 0, 43 + 43 + 59]
 #clothesList = ['0', '0', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-taobaoList = [0, 0, 65, 0, 25]
+taobaoList = [0, 0, 65, 0, 25, 0]
 #taobaoListList = ['0', '0', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-transportationList = [4, 18, 5, 1, 24]
+transportationList = [4, 18, 5, 1, 24, 22]
 #transportationList = ['4', '18', '5', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-hotelList = [0, 0, 0, 0, 0]
+hotelList = [0, 0, 0, 0, 0, 0]
 #hotelsList = ['0', '0', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-skateboardingList = [0, 0, 0, 0, 0]
+skateboardingList = [0, 0, 0, 0, 0, 0]
 #skateboardingList = ['0', '0', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-otherList = [0, 0, 0, 0, 0]
+otherList = [0, 0, 0, 0, 0, 0]
 #otherList = ['0', '0', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-paybackList = [0, 1100, 345, 0, 0]
+paybackList = [0, 1100, 345, 0, 0, 0]
 #paybackList = ['0', '1100', '345', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
-utilitiesList = [100, 0, 0, 0, 80]
+utilitiesList = [100, 0, 0, 0, 80, 0]
 #utilitiesList = ['100', '0', '0', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 
 
@@ -48,10 +48,11 @@ taobaoTotal = sum(taobaoList)
 ratsTotal = sum(ratsList)
 utilitiesTotal = sum(utilitiesList)
 transportationTotal = sum(transportationList)
-grandTotal = gsTotal + eatTotal + taobaoTotal + ratsTotal + utilitiesTotal + transportationTotal
+clothesTotal = sum(clothesList)
+grandTotal = gsTotal + eatTotal + taobaoTotal + ratsTotal + utilitiesTotal + transportationTotal + clothesTotal
 
 
-x = days = np.linspace(1, 5, 5)
+x = days = np.linspace(1, 6, 6)
 y = otherList
 fig, ax = plt.subplots()
 ax.grid()
@@ -64,6 +65,7 @@ plt.plot(x, taobaoList, "g-*")
 plt.plot(x, ratsList, "y-*")
 plt.plot(x, eatList, "c-*")
 plt.plot(x, gsList, "m-*")
+plt.plot(x, clothesList, "k-*")
 plt.xlabel('Days', fontsize=16)
 plt.title('March', fontsize=26)
 plt.ylabel('Expenses', fontsize=16)
@@ -73,6 +75,7 @@ plt.errorbar(x, transportationList, label=f'transportation total: {transportatio
 plt.errorbar(x, utilitiesList, label=f'utilites total: {utilitiesTotal}')
 plt.errorbar(x, taobaoList, label=f'taobao total: {taobaoTotal}')
 plt.errorbar(x, ratsList, label=f'rats total: {ratsTotal}')
+plt.errorbar(x, clothesList, label=f'clothes total: {clothesTotal}')
 plt.errorbar(x, eatList, label=f'fine dining total: {eatTotal}')
 plt.errorbar(x, gsList, label=f'groceries and supplies total: {gsTotal}')
 plt.errorbar(x, y, label=f'Grand total: {grandTotal}')
